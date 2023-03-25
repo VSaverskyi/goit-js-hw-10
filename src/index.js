@@ -57,19 +57,20 @@ function clearCountriesList() {
 }
 
 function markUpCountryCard(data) {
+  const { flags, name, capital, population, languages } = data[0];
   countryInfoEl.innerHTML = `<div class="flags-wrapper">
-  <img src=${data[0].flags.svg} alt=${data[0].flags.alt} width="40">
-<h2 class="country-name">${data[0].name.official}</h2>
+  <img src=${flags.svg} alt=${flags.alt} width="40" class="country-flag-img">
+<h2 class="country-name">${name.official}</h2>
 </div>
 <ul class="country-info list">
     <li class="country-info-item">
-        <p class="capital">Capital: ${data[0].capital}</p>
+        <p class="capital">Capital: ${capital}</p>
     </li>
     <li class="country-info-item">
-        <p class="population">Population: ${data[0].population}</p>
+        <p class="population">Population: ${population}</p>
     </li>
     <li class="country-info-item">
-        <p class="languages">Languages: ${Object.values(data[0].languages)}</p>
+        <p class="languages">Languages: ${Object.values(languages)}</p>
     </li>
 </ul>`;
 }
