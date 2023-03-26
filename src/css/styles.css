@@ -50,8 +50,17 @@ a {
   display: flex;
   gap: 10px;
   align-items: center;
+  padding: 8px;
 }
 
 .country-flag-img {
   width: 60px;
+}
+
+.country-info-item {
+  padding: 4px;
+}
+
+.country-description-text {
+  font-weight: 700;
 }

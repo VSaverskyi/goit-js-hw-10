@@ -64,13 +64,15 @@ function markUpCountryCard(data) {
 </div>
 <ul class="country-info list">
     <li class="country-info-item">
-        <p class="capital">Capital: ${capital}</p>
+        <p class="capital"><span class="country-description-text">Capital</span>: ${capital}</p>
     </li>
     <li class="country-info-item">
-        <p class="population">Population: ${population}</p>
+        <p class="population"><span class="country-description-text">Population</span>: ${population}</p>
     </li>
     <li class="country-info-item">
-        <p class="languages">Languages: ${Object.values(languages)}</p>
+        <p class="languages"><span class="country-description-text">Languages</span>: ${Object.values(
+          languages
+        )}</p>
     </li>
 </ul>`;
 }
