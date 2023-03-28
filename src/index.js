@@ -27,6 +27,7 @@ const onCountriesSearchInput = e => {
       if (data.length === 1) {
         clearCountriesList();
         markUpCountryCard(data);
+        e.target.value = '';
       } else if (data.length >= 2 && data.length <= 10) {
         clearCountryInfo();
         markUpCountriesList(data);
@@ -39,7 +40,11 @@ const onCountriesSearchInput = e => {
     .catch(err => {
       clearCountriesList();
       clearCountryInfo();
-      Notify.failure('Oops, there is no country with that name');
+      if (err.message === '404') {
+        Notify.failure('Oops, there is no country with that name');
+      } else {
+        console.log('Error: ' + err.message);
+      }
     });
 };
 
